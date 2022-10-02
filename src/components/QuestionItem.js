@@ -11,6 +11,7 @@ function QuestionItem({ question,onDelete }) {
     </option>
   ));
 
+
  
 
   function handleOnChange(e){
@@ -32,6 +33,11 @@ function QuestionItem({ question,onDelete }) {
       console.log(data)
     })
   }
+
+  const handleDelete=()=>{
+    onDelete(id)
+  }
+  
   return (
     <li>
       <h4>Question {id}</h4>
@@ -40,7 +46,7 @@ function QuestionItem({ question,onDelete }) {
         Correct Answer:
         <select defaultValue={updatedIndex} onChange={handleOnChange}>{options}</select>
       </label>
-      <button onClick={onDelete}>Delete Question</button>
+      <button onClick={handleDelete}>Delete Question</button>
     </li>
   );
 }

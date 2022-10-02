@@ -14,13 +14,16 @@ function QuestionList() {
  },[])
 
  function handleDelete(id){
-  console.log(id)
+ 
   fetch(`http://localhost:4000/questions/${id}`, {
     method:"DELETE"
   })
   .then(res => res.json())
   .then(data =>{
-    alert("Deleted Successfully")
+     //filter 
+  const updatedList= questions.filter(question=> question.id !==id)
+  setQuestions(updatedList);
+
   })
 }
 
