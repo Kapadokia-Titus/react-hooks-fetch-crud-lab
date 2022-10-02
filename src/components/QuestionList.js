@@ -20,6 +20,7 @@ function QuestionList() {
   })
   .then(res => res.json())
   .then(data =>{
+    alert("Deleted Successfully")
   })
 }
 

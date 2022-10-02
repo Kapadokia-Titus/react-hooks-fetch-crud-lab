@@ -5,7 +5,7 @@ function QuestionItem({ question,onDelete }) {
   const [questions, setQuestions] = useState(question)
   const [updatedIndex, setUpdatedIndex] = useState(correctIndex)
 
-  const options = answers.map((answer, index) => (
+  const options = answers?.map((answer, index) => (
     <option key={index} value={index}>
       {answer}
     </option>
